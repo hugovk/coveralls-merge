@@ -1,4 +1,3 @@
-import sys
 from setuptools import setup
 
 setup(
@@ -10,7 +9,8 @@ setup(
     author='Eric Soroos',
     author_email='eric@soroos.net',
     description='Upload coverage for C extensions to coveralls.io ',
-    long_description=open('README.rst').read() + '\n\n' + open('CHANGELOG.rst').read(),
+    long_description=(open('README.rst').read() + '\n\n' +
+                      open('CHANGELOG.rst').read()),
     entry_points={
         'console_scripts': [
             'coveralls-merge = coveralls_merge.core:main',
