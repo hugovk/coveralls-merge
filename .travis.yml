@@ -1,0 +1,27 @@
+language: python
+
+python:
+ - pypy3
+ - pypy
+ - 3.6
+ - 3.5
+ - 3.4
+ - 3.3
+ - 2.7
+ - 2.6
+
+sudo: false
+
+install:
+ - pip install pep8 pyflakes
+
+script:
+ # Test install
+ - python setup.py install
+
+ # Static analysis
+ - pyflakes .
+ - pep8 --statistics --count .
+
+matrix:
+  fast_finish: true
